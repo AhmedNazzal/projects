@@ -1,0 +1,161 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+typedef long long ll;
+//Global variables:
+int shapes, sq, hypo, tria, recleng, recwid, penta;
+char symbol;
+
+//Classes:
+/*class symb
+{
+public:
+	char symbol;
+	construct ()
+
+};*/
+
+//Functions:
+void spacing(int s)
+{
+	for (int i = 0; i < s; i++)
+	{
+		cout << " ";
+	}
+}
+/*void pentagonal(int a, char s)
+{
+	for (int i = 0; i < a; i++)
+	{
+		int p = a - i;
+		spacing(p);
+		for (int j = 0; j <= i; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+	for (int i = 0; i < a; i++)
+	{
+		int p = a - i;
+		spacing(p);
+		for (int j = 0; j <= i; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+}*/
+void rectangle(int a, int b, char s)
+{
+	for (int i = 0; i < b; i++)
+	{
+		cout << "\t";
+		for (int j = 0; j < a; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+}
+void square(int a, char s)
+{
+	for (int i = 0; i < a; i++)
+	{
+		cout << "\t";
+		for (int j = 0; j < a; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+}
+void ang_tria(int a, char s)
+{
+	for (int i = 0; i < a; i++)
+	{
+		cout << "   ";
+		for (int j = 0; j <= i; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+}
+void triangle(int a, char s)
+{
+	for (int i = 0; i < a; i++)
+	{
+		int p = a - i;
+		spacing(p);
+		for (int j = 0; j <= i; j++)
+		{
+			cout << s << " ";
+		}
+		cout << endl;
+	}
+}
+void print1()
+{
+	cout << "Enter the symbol you want to draw with :   ";
+	cin >> symbol;
+	cout << endl;
+}
+void print2()
+{
+	int c;
+	cout << "Choose the shape you want to draw and enter its number :" << endl;
+	cout << "1.Square" << endl;
+	cout << "2.Right-angled triangle" << endl;
+	cout << "3.Equilateral triangle" << endl;
+	cout << "4.Rectangle" << endl;
+	cout << "5.Circle" << endl;
+	//cout << "6.Pentagonal" << endl;
+	cin >> c;
+	switch (c)
+	{
+	case 1:
+		cout << "Enter the length of the side :   ";
+		cin >> sq;
+		square(sq, symbol);
+		break;
+	case 2:
+		cout << "Enter the length of the hypotenuse of the triangle :   ";
+		cin >> hypo;
+		ang_tria(hypo, symbol);
+		break;
+	case 3:
+		cout << "Enter the length of the side :   ";
+		cin >> tria;
+		triangle(tria, symbol);
+		break;
+	case 4:
+		cout << "Enter the length and width respectively :   " << endl;
+		cin >> recleng >> recwid;
+		rectangle(recleng, recwid, symbol);
+		break;
+	case 5:
+		break;
+		/*case 6:
+			cout << "Enter the length of the side :   ";
+			cin >> penta;
+			pentagonal(penta, symbol);
+			break;*/
+	default:cout << "error!" << endl;
+		break;
+	}
+}
+//Main:
+int main()
+{
+	cout << "Welcome" << endl << "How many shapes do you want to draw ?   ";
+	cin >> shapes;
+	cout << endl;
+	for (int i = 0; i < shapes; i++)
+	{
+		print1();
+		print2();
+	}
+	return 0;
+}

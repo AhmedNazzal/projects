@@ -1,0 +1,150 @@
+#include <iostream>
+#include "string"
+using namespace std;
+int main()
+{
+	string bcd;
+	cin >> bcd;
+	for(bool bcd_check = 1; bcd_check ;)
+	{
+		for (short i = 0; bcd.size() > i; i++)
+	    {
+			if (bcd[i] < '0' || bcd[i]>'9')
+			{
+				cout << "error\n";
+				cin >> bcd;
+				bcd_check = 1;
+				break;
+			}
+			else
+				bcd_check = 0;
+
+	    }
+     }
+	for (short i = 0; bcd.size() > i; i++)
+	{
+		switch (int(bcd[i])-48)
+		{
+		case 0: cout << "0000";	
+			break;
+		case 1: cout << "0001";
+			break;
+		case 2:cout << "0010";
+			break;
+		case 3:cout << "0011";
+			break;
+		case 4:cout << "0100";
+			break;
+		case 5:cout << "0101";
+			break;
+		case 6:cout << "0110";
+			break;
+		case 7:cout << "0111";
+			break;
+		case 8:cout << "1000";
+			break;
+		case 9:cout << "1001";
+		}
+		cout << "  ";
+	}
+	cout << "\n\n";
+	for (short i = 1; i<=13; i++)
+	{
+		cout <<"\t";
+		for(short j=0 ; j<bcd.size() ; j++)
+		{
+			switch (i)
+			{
+			case 1: if(bcd[j]=='4' || bcd[j]=='1')
+				cout << "           ";
+				  else
+				cout << " # # # # # ";
+				break;
+			case 2: if (bcd[j] == '6' || bcd[j] == '5')
+				cout << "#          ";
+				  else if (bcd[j] == '1' || bcd[j] == '2' || bcd[j] == '3' || bcd[j] == '7')
+				cout << "          #";
+				  else
+				cout << "#         #";
+				break;
+			case 3: if (bcd[j] == '6' || bcd[j] == '5')
+				cout << "#          ";
+				  else if (bcd[j] == '1' || bcd[j] == '2' || bcd[j] == '3' || bcd[j] == '7')
+				cout << "          #";
+				  else
+				cout << "#         #";
+				break;
+			case 4: if (bcd[j] == '6' || bcd[j] == '5')
+				cout << "#          ";
+				  else if (bcd[j] == '1' || bcd[j] == '2' || bcd[j] == '3' || bcd[j] == '7')
+				cout << "          #";
+				  else
+				cout << "#         #";
+				break;
+			case 5: if (bcd[j] == '6' || bcd[j] == '5')
+				cout << "#          ";
+				  else if (bcd[j] == '1' || bcd[j] == '2' || bcd[j] == '3' || bcd[j] == '7')
+				cout << "          #";
+				  else
+				cout << "#         #";
+				break;
+			case 6: if (bcd[j] == '6' || bcd[j] == '5')
+				cout << "#          ";
+				  else if (bcd[j] == '1' || bcd[j] == '2' || bcd[j] == '3' || bcd[j] == '7')
+				cout << "          #";
+				  else
+				cout << "#         #";
+				break;
+			case 7: if (bcd[j] == '0' || bcd[j] == '1' || bcd[j] == '7')
+				cout << "           ";
+				  else
+				cout << " # # # # # ";
+				break;
+			case 8: if (bcd[j] == '2')
+				cout << "#          ";
+				  else if (bcd[j] == '0' || bcd[j] == '6' || bcd[j] == '8')
+				cout << "#         #";
+				  else
+				cout << "          #";
+				break;
+			case 9:if (bcd[j] == '2')
+				cout << "#          ";
+				  else if (bcd[j] == '0' || bcd[j] == '6' || bcd[j] == '8')
+				cout << "#         #";
+				  else
+				cout << "          #";
+				break;
+			case 10:if (bcd[j] == '2')
+				cout << "#          ";
+				   else if (bcd[j] == '0' || bcd[j] == '6' || bcd[j] == '8')
+				cout << "#         #";
+				   else
+				cout << "          #";
+				break;
+			case 11:if (bcd[j] == '2')
+				cout << "#          ";
+				   else if (bcd[j] == '0' || bcd[j] == '6' || bcd[j] == '8')
+				cout << "#         #";
+				   else
+				cout << "          #";
+				break;
+			case 12:if (bcd[j] == '2')
+				cout << "#          ";
+				   else if (bcd[j] == '0' || bcd[j] == '6' || bcd[j] == '8')
+				cout << "#         #";
+				   else
+				cout << "          #";
+				break;
+			case 13: if (bcd[j] == '1' || bcd[j] == '4' || bcd[j] == '7')
+				cout << "           ";
+				   else
+				cout << " # # # # # ";
+				break;
+
+			}
+			cout << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
